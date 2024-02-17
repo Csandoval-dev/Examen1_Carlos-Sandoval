@@ -5,11 +5,7 @@ class BookListItem extends StatelessWidget {
   final Book book;
   final VoidCallback onTap;
 
-  const BookListItem({
-    required this.book,
-    required this.onTap,
-    Key? key,
-  }) : super(key: key);
+  const BookListItem({required this.book, required this.onTap, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

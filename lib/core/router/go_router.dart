@@ -7,7 +7,7 @@ final GoRouter router = GoRouter(
   routes: <GoRoute>[
     GoRoute(
       path: '/',
-      builder: (context, state) => const BooksScreen(books: [],),
+      builder: (context, state) => const BooksScreen(),
     ),
   ],
 );

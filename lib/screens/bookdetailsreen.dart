@@ -4,10 +4,7 @@ import 'package:flutter_examen_programovil/models/book.dart';
 class BookDetailScreen extends StatelessWidget {
   final Book book;
 
-  const BookDetailScreen({
-    required this.book,
-    Key? key,
-  }) : super(key: key);
+  const BookDetailScreen({required this.book, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +21,7 @@ class BookDetailScreen extends StatelessWidget {
             Text('Editorial: ${book.publisher}'),
             Text('ISBN: ${book.isbn}'),
             Text('Páginas: ${book.pages}'),
-            Text('Villanos Asociados:'),
+            const Text('Villanos Asociados:'),
             ...book.villains.map((villain) => Text(villain.name)).toList(),
           ],
         ),
