@@ -1,4 +1,5 @@
-// book.dart
+import 'villain.dart';
+
 class Book {
   final int id;
   final int year;
@@ -32,24 +33,7 @@ class Book {
       isbn: json['ISBN'],
       pages: json['Pages'],
       notes: List<String>.from(json['Notes'] ?? []),
-      villains: (json['villains'] as List<dynamic>? ?? [])
-          .map((v) => Villain.fromJson(v))
-          .toList(),
-    );
-  }
-}
-
-// villain.dart
-class Villain {
-  final String name;
-  final String url;
-
-  Villain({required this.name, required this.url});
-
-  factory Villain.fromJson(Map<String, dynamic> json) {
-    return Villain(
-      name: json['name'],
-      url: json['url'],
+      villains: (json['villains'] as List<dynamic>? ?? []).map((v) => Villain.fromJson(v)).toList(),
     );
   }
 }

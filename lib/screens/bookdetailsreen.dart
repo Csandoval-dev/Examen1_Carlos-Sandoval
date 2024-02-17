@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_examen_programovil/models/book.dart';
+
+class BookDetailScreen extends StatelessWidget {
+  final Book book;
+
+  const BookDetailScreen({
+    required this.book,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(book.title),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Año: ${book.year}'),
+            Text('Editorial: ${book.publisher}'),
+            Text('ISBN: ${book.isbn}'),
+            Text('Páginas: ${book.pages}'),
+            Text('Villanos Asociados:'),
+            ...book.villains.map((villain) => Text(villain.name)).toList(),
+          ],
+        ),
+      ),
+    );
+  }
+}
